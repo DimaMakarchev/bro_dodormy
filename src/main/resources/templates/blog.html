@@ -11,13 +11,13 @@
 <header th:insert="blogs/header :: header"/>
 
 <div class="container mt-5">
-    <h1>Blog 1</h1>
+    <h1>Blog Site</h1>
     <div th:each="all : ${dodor}" class="alert alert-info mt-2">
-        <h3 th:text="${all.title}"/>
+        <h2 th:text="${all.title}"/>
         <h3 th:text="${all.anons}"/>
-        <h3 th:text="${all.full_text}"/>
-        <h3 th:text="${all.views}"/>
-        <a th:href="'/blog/'+ ${all.id}">After</a>
+        <h4 th:text="${all.full_text}"/>
+<!--        <h3 th:text="${all.views}"/>-->
+        <a th:href="'/blog/'+ ${all.id}">Dates</a>
     </div>
 
 </div>

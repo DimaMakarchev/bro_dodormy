@@ -12,12 +12,11 @@ public class ServiceBR {
     @Autowired
     private RepoBRDodor repoBRDodor;
 
-    public void methodSave() {
+    public void methodSave(String title, String anons, String full_text) {
         Dodor dodor = new Dodor();
-        dodor.setAnons("Bro_1")
-                .setFull_text("Bro_2")
-                .setTitle("Bro_3")
-                .setViews("Bro_4");
+        dodor.setAnons(anons)
+                .setFull_text(full_text)
+                .setTitle(title);
         repoBRDodor.save(dodor);
     }
 
