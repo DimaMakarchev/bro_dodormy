@@ -9,15 +9,15 @@
 </head>
 <body>
 <header th:insert="blogs/header :: header"/>
-
-<div class="container mt-5">
-    <h1>Blog Site</h1>
+<div class="container mt-5 mb-5">
+    <h1>Redactor</h1>
     <div th:each="all : ${dodor}" class="alert alert-info mt-2">
-        <h2 th:text="${all.title}"/>
-        <h3 th:text="${all.anons}"/>
-        <!--        <h4 th:text="${all.full_text}"/>-->
-        <h3 th:text="${all.views}"/>
-        <a th:href="'/blog/'+ ${all.id}" class="btn btn-warning">Dates</a>
+    <form method="post">
+        <input type="text" th:value="${all.title}" name="title" placeholder="title..." class="form-control"/></br>
+        <input type="text" th:value="${all.anons}" name="anons" placeholder="anons..." class="form-control"/></br>
+        <textarea type="text"  th:text="${all.full_text}" name="full_text" placeholder="full_text..." class="form-control"/></br>
+        <button type="submit" class="btn btn-success">NEW BR</button>
+    </form>
     </div>
 </div>
 

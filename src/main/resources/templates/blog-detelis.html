@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title th:text="${title}"></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
 
@@ -11,14 +11,16 @@
 <header th:insert="blogs/header :: header"/>
 
 <div class="container mt-5">
-    <h1>Blog Site</h1>
     <div th:each="all : ${dodor}" class="alert alert-info mt-2">
         <h2 th:text="${all.title}"/>
-        <h3 th:text="${all.anons}"/>
-        <!--        <h4 th:text="${all.full_text}"/>-->
-        <h3 th:text="${all.views}"/>
-        <a th:href="'/blog/'+ ${all.id}" class="btn btn-warning">Dates</a>
+        <h3 th:text="${all.full_text}"/>
+        <h4 th:text="${all.views}"/>
+        <a th:href="'/blog/' + ${all.id} +'/edit' " class="btn btn-danger">Redactor</a>
+        <form th:action="'/blog/' + ${all.id} +'/remove'" method="post">
+            <button class="btn btn-lg btn-warning">Remove</button>
+        </form>
     </div>
+
 </div>
 
 

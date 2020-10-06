@@ -12,7 +12,17 @@
 <body>
 <header th:insert="blogs/header::header"/>
 
-<!--<div th:insert="blogs/header:: carusel"/>-->
+
+
+<form  method="post">
+    <input name="date" type="text"/>
+    <button>Weather</button>
+</form>
+
+
+<h1>WEATER : </h1><h1 th:text="${weater}"></h1>
+
+
 
 <h1 th:text="${title}"></h1>
 
